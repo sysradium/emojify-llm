@@ -315,6 +315,7 @@ name = "emojify-llm"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "accelerate" },
     { name = "distilabel" },
     { name = "emoji" },
     { name = "peft" },
@@ -325,6 +326,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
+    { name = "accelerate" },
     { name = "distilabel" },
     { name = "emoji" },
     { name = "peft" },
