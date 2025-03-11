@@ -10,16 +10,16 @@ Odds Ratio Preference Optimization (ORPO) is a fine-tuning approach designed to 
 
 The reward function for ORPO, as per the original paper, is formulated as:
 
-```math
+$$
 R(y) = \log \frac{\pi_{\theta}(y | x)}{\pi_{\text{ref}}(y | x)} + \beta \cdot A(y)
-```
+$$
 
 where:
 
-- \( \pi_{\theta}(y | x) \) is the fine-tuned model's probability of generating response \( y \) given input \( x \),
-- \( \pi_{\text{ref}}(y | x) \) is the reference model's probability,
-- \( A(y) \) is the advantage function,
-- \( \beta \) is a scaling parameter controlling preference strength.
+- $`\pi_{\theta}(y | x)`$ is the fine-tuned model's probability of generating response \( y \) given input \( x \),
+- $`\pi_{\text{ref}}(y | x)`$ is the reference model's probability,
+- $`A(y)`$ is the advantage function,
+- $`\beta`$ is a scaling parameter controlling preference strength.
 
 ## Project Structure
 
@@ -34,9 +34,9 @@ This script uses `distilabel` to generate a preference dataset. Given a prompt, 
 
 The scoring function is currently simple:
 
-```math
+$$
 S(m) = \begin{cases} 1, & \text{if } m \text{ contains an emoji} \\ 0, & \text{otherwise} \end{cases}
-```
+$$
 
 A more sophisticated scoring mechanism will be implemented later.
 
@@ -46,23 +46,23 @@ This script fine-tunes the model using **Parameter-Efficient Fine-Tuning (PEFT)*
 
 #### LoRA Overview
 
-LoRA introduces low-rank trainable matrices \( \Delta W \) to efficiently fine-tune pre-trained models:
+LoRA introduces low-rank trainable matrices to efficiently fine-tune pre-trained models:
 
-```math
+$$
 W' = W + \Delta W
-```
+$$
 
-where \( W' \) is the adapted weight matrix, and \( \Delta W \) is decomposed as:
+where $`W'`$ is the adapted weight matrix, and $`\Delta W`$ is decomposed as:
 
-```math
+$$
 \Delta W = A B
-```
+$$
 
 with:
 
-```math
+$$
 A \in \mathbb{R}^{d \times r}, \quad B \in \mathbb{R}^{r \times k}
-```
+$$
 
 This significantly reduces the number of trainable parameters while retaining model performance.
 
@@ -83,7 +83,7 @@ make tensorboard
 1. Install dependencies using `uv`:
 
     ```sh
-    uv pip install -r requirements.txt
+    uv sync
     ```
 
 2. Generate preference data:
