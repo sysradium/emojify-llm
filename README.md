@@ -89,17 +89,17 @@ make tensorboard
 2. Generate preference data:
 
     ```sh
-    uv run python orpo/generate.py
+    $(PYTHON) orpo/generate.py
     ```
 
 3. Train the model:
 
     ```sh
-    uv run python orpo/train.py
+    $(PYTHON) orpo/train.py
     ```
 
 4. Run inference:
 
     ```sh
-    uv run python orpo/inference.py
+    $(PYTHON) orpo/inference.py
     ```

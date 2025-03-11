@@ -12,4 +12,5 @@ dependencies = [
   "distilabel",
   "trl",
   "tensorboard",
+  "mlflow",
 ]

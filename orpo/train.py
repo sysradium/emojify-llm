@@ -43,7 +43,7 @@ training_args = ORPOConfig(
     bf16=True,
     output_dir=f"trained/{os.environ['BASE_MODEL']}-ORPO",
     logging_steps=10,
-    report_to="tensorboard",
+    report_to="mlflow",
 )
 
 trainer = ORPOTrainer(
