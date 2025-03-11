@@ -1,1 +1,66 @@
+# Byte-compiled / cached files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+ENV/
+.virtualenv/
+*.venv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Distribution / Packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+*.manifest
+*.spec
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Pytest / Coverage reports
+.coverage
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+pytest_cache/
+.cache/
+
+# MyPy and type checking
+.mypy_cache/
+.dmypy.json
+.pyre/
+
+# Editor & IDE specific
+.vscode/
+.idea/
+*.iml
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs and debug
+logs/
+*.log
+debug.log
+*.bak
+
+# Docker and Kubernetes
+*.dockerignore
+docker-compose.override.yml
+
+# Temporary files
+*.swp
+*.swo
+*~
+
 trained/
