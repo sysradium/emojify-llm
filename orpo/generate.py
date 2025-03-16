@@ -51,7 +51,7 @@ with Pipeline(name="generate-dataset") as pipeline:
                 "You are a helpful AI Assistant writer. "
                 "You will be provided with an instruction and true answer."
                 "Please reformat the answer using markdown AND insert emojis for clarity."
-                "You can use emojis to format buletpoints, emphaise emotions"
+                "You can use emojis to format bulletpoints, emphasize emotions"
                 "Messages without emojis will be rejected."
                 "Long messages are discouraged"
             ),
@@ -65,7 +65,7 @@ with Pipeline(name="generate-dataset") as pipeline:
             name="text_generation_no_emoji",
             system_prompt=(
                 "You are a helpful AI Assistant writer. "
-                "Please reformat the answer using markdown AND. DO NOT insert emojis"
+                "Please reformat the answer using markdown. DO NOT insert emojis"
                 "Messages with emojis will be rejected."
                 "Long messages are discouraged"
             ),
@@ -92,7 +92,6 @@ with Pipeline(name="generate-dataset") as pipeline:
     load_dataset >> generate_responses[1] >> group_responses
 
     group_responses >> classify_responses >> format_dpo
-
 
 if __name__ == "__main__":
     distiset = pipeline.run(use_cache=False)

@@ -8,7 +8,7 @@ from peft.tuners.lora.config import LoraConfig
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from trl import ORPOConfig, ORPOTrainer
 
-device = torch.device("mps") if torch.mps.is_available() else "cpu"
+device = torch.device("mps") if torch.backends.mps.is_available() else torch.device("cpu")
 
 model = AutoModelForCausalLM.from_pretrained(
     os.environ["BASE_MODEL"], torch_dtype=torch.bfloat16
